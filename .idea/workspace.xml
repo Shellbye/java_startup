@@ -2,59 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bf23f92-1830-4b77-af66-1ed9a9218fd3" name="Default" comment="XML">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jdom_jdom_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/JDOM_XML/ModifyXMLFile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/JDOM_XML/WriteXMLFile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\Main.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\SAX_XML\ReadXMLFile.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\AppendToFileExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\BufferedReaderExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\CopyFileExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\CreateFileExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\DeleteFileExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\FileChecker.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\FilePathExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\FilePathExample2.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\FilePermissionExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\FileReadAttribute.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\GetFileCreationDateExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\GetFileLastModifiedExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\RenameFileExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\WriteFileExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\com\zero\WriteToFileExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\directory\CopyDirectoryExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\directory\DeleteDirectoryExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\directory\DisplayDirectoryAndFile.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\first\CustomTextFieldSample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\first\DoubleEncoding.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\first\HelloWorld.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\first\HelloWorldAnonymousClasses.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\needAnotherCheck" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\second\ChangeFileLastModifiedExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\second\DiskSpaceDetail.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\second\File2Hex.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\second\FileToArrayOfBytes.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\second\StringToInputStreamExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\second\TestCheckSum.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\second\test.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\temperaryFile\CreateTempFileExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\temperaryFile\DeleteTempFileExample.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\third\Address.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\third\Deserializer.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\third\GZipFile.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\third\GZipFile1.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\third\Serializer.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\third\Serializer0.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\third\UnZip.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\third\Zip.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\third\printStdIn.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\xml\ModifyXMLFile.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\xml\ReadXMLFile.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\java_learning\src\xml\WriteXMLFile.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_learning.iml" afterPath="$PROJECT_DIR$/java_learning.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/JAXB/Customer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/JAXB/JAXBExample.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/JAXB/JAXBExampleO2X.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/XML_Properties/PropertiesXMLExample.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/XML_Properties/XML2Properties.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java_learning.iws" />
@@ -62,6 +14,7 @@
     <file path="/Dummy.txt" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1405331203131" ignored="false" />
     <file path="/printStdIn.java" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1405317864468" ignored="false" />
     <file path="/pom.xml" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1405330306220" ignored="false" />
+    <file path="/Customer.java" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1405331632547" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,37 +72,7 @@
     <favorites_list name="java_learning" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="WriteXMLFile.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/JDOM_XML/WriteXMLFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="1" selection-start="1960" selection-end="1960" vertical-scroll-proportion="0.7903494">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XMLOutputter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/jdom/jdom/1.1/jdom-1.1-sources.jar!/org/jdom/output/XMLOutputter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="54" selection-start="5421" selection-end="5421" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Document.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/jdom/jdom/1.1/jdom-1.1-sources.jar!/org/jdom/Document.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="232" column="20" selection-start="8495" selection-end="8495" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -167,11 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/third/Serializer.java" />
-        <option value="$PROJECT_DIR$/src/temperaryFile/CreateTempFileExample.java" />
-        <option value="$PROJECT_DIR$/src/temperaryFile/DeleteTempFileExample.java" />
-        <option value="$PROJECT_DIR$/src/directory/DeleteDirectoryExample.java" />
-        <option value="$PROJECT_DIR$/src/directory/CopyDirectoryExample.java" />
         <option value="$PROJECT_DIR$/src/directory/DisplayDirectoryAndFile.java" />
         <option value="$PROJECT_DIR$/src/third/printStdIn.java" />
         <option value="$PROJECT_DIR$/src/xml/ReadXMLFile.java" />
@@ -183,6 +101,11 @@
         <option value="$PROJECT_DIR$/src/main/java/JDOM_XML/ReadXMLFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/JDOM_XML/ModifyXMLFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/JDOM_XML/WriteXMLFile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JAXB/JAXBExampleO2X.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JAXB/JAXBExample.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JAXB/Customer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/XML_Properties/PropertiesXMLExample.java" />
+        <option value="$PROJECT_DIR$/src/main/java/XML_Properties/XML2Properties.java" />
       </list>
     </option>
   </component>
@@ -299,6 +222,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java_learning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java_learning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="XML_Properties" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -340,95 +289,7 @@
       <recent name="D:\Git\java_learning\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WriteXMLFile">
-    <configuration default="false" name="DisplayDirectoryAndFile" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="directory.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="directory.DisplayDirectoryAndFile" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="java_learning" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="printStdIn" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="third.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="third.printStdIn" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="java_learning" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ModifyXMLFile" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="xml.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="xml.ModifyXMLFile" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="java_learning" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ReadXMLFile" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="JDOM_XML.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="JDOM_XML.ReadXMLFile" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="java_learning" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.XML2Properties">
     <configuration default="false" name="WriteXMLFile" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -437,6 +298,100 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="JDOM_XML.WriteXMLFile" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="java_learning" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="JAXBExampleO2X" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="JAXB.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="JAXB.JAXBExampleO2X" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="java_learning" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="JAXBExample" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="JAXB.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="JAXB.JAXBExample" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="java_learning" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="PropertiesXMLExample" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="XML_Properties.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="XML_Properties.PropertiesXMLExample" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="java_learning" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="XML2Properties" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="XML_Properties.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="XML_Properties.XML2Properties" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -467,19 +422,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.DisplayDirectoryAndFile" />
-      <item index="1" class="java.lang.String" itemvalue="Application.printStdIn" />
-      <item index="2" class="java.lang.String" itemvalue="Application.ModifyXMLFile" />
-      <item index="3" class="java.lang.String" itemvalue="Application.ReadXMLFile" />
-      <item index="4" class="java.lang.String" itemvalue="Application.WriteXMLFile" />
+      <item index="0" class="java.lang.String" itemvalue="Application.WriteXMLFile" />
+      <item index="1" class="java.lang.String" itemvalue="Application.JAXBExampleO2X" />
+      <item index="2" class="java.lang.String" itemvalue="Application.JAXBExample" />
+      <item index="3" class="java.lang.String" itemvalue="Application.PropertiesXMLExample" />
+      <item index="4" class="java.lang.String" itemvalue="Application.XML2Properties" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.WriteXMLFile" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ReadXMLFile" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ReadXMLFile" />
-        <item index="3" class="java.lang.String" itemvalue="Application.WriteXMLFile" />
-        <item index="4" class="java.lang.String" itemvalue="Application.ModifyXMLFile" />
+        <item index="0" class="java.lang.String" itemvalue="Application.XML2Properties" />
+        <item index="1" class="java.lang.String" itemvalue="Application.PropertiesXMLExample" />
+        <item index="2" class="java.lang.String" itemvalue="Application.JAXBExample" />
+        <item index="3" class="java.lang.String" itemvalue="Application.JAXBExampleO2X" />
+        <item index="4" class="java.lang.String" itemvalue="Application.WriteXMLFile" />
       </list>
     </recent_temporary>
   </component>
@@ -529,7 +484,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -549,7 +504,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18770054" sideWeight="0.7061452" order="0" side_tool="false" content_ui="combo" x="726" y="72" width="467" height="895" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18770054" sideWeight="0.7061452" order="0" side_tool="false" content_ui="combo" x="726" y="72" width="467" height="895" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29385474" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -622,108 +577,124 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/org/xml/sax/ErrorHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="17" selection-start="2257" selection-end="2257" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/org/xml/sax/InputSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="299" column="0" selection-start="8724" selection-end="8724" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/org/xml/sax/XMLReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="0" selection-start="6156" selection-end="6156" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/org/xml/sax/helpers/DefaultHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="292" column="51" selection-start="9709" selection-end="9709" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SAX_XML/ReadXMLFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="0" selection-start="2076" selection-end="2076" vertical-scroll-proportion="1.925926">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/javax/xml/parsers/SAXParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="415" column="77" selection-start="14899" selection-end="14899" vertical-scroll-proportion="7.4074073" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/java_learning.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="968" selection-end="968" vertical-scroll-proportion="0.46296296">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="617" selection-end="617" vertical-scroll-proportion="0.49189815">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jdom/jdom/1.1/jdom-1.1.jar!/org/jdom/input/SAXBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jdom/jdom/1.1/jdom-1.1-sources.jar!/org/jdom/input/SAXBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="0" selection-start="2752" selection-end="2752" vertical-scroll-proportion="-0.46296296">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jdom/jdom/1.1/jdom-1.1-sources.jar!/org/jdom/Parent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="17" selection-start="2959" selection-end="2959" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JDOM_XML/ModifyXMLFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="34" selection-start="1232" selection-end="1241" vertical-scroll-proportion="0.5081019">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JDOM_XML/ReadXMLFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="367" selection-end="367" vertical-scroll-proportion="0.28935185">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jdom/jdom/1.1/jdom-1.1-sources.jar!/org/jdom/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="20" selection-start="8495" selection-end="8495" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jdom/jdom/1.1/jdom-1.1-sources.jar!/org/jdom/output/XMLOutputter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="54" selection-start="5421" selection-end="5421" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/JDOM_XML/WriteXMLFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="1" selection-start="1960" selection-end="1960" vertical-scroll-proportion="0.7903494">
+        <state line="46" column="0" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.37437603">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="326" column="25" selection-start="11807" selection-end="11807" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/javax/xml/bind/JAXBContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="400" column="10" selection-start="17664" selection-end="17664" vertical-scroll-proportion="-7.0439816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/javax/xml/bind/Marshaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="155" column="71" selection-start="3651" selection-end="3651" vertical-scroll-proportion="-4.2824073">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/javax/xml/bind/Unmarshaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="408" column="17" selection-start="16373" selection-end="16373" vertical-scroll-proportion="11.053241">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JAXB/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="9" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/javax/xml/bind/annotation/XmlElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="18" selection-start="3810" selection-end="3810" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/javax/xml/bind/annotation/XmlRootElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="34" selection-start="4147" selection-end="4147" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JAXB/JAXBExampleO2X.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="43" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JAXB/JAXBExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="391" selection-end="391" vertical-scroll-proportion="0.4212963">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/Hashtable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1188" column="48" selection-start="41758" selection-end="41758" vertical-scroll-proportion="0.20965058">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/Properties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="897" column="5" selection-start="36262" selection-end="36262" vertical-scroll-proportion="-8.276206">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/XML_Properties/PropertiesXMLExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="54" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/io/InputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="49" selection-start="858" selection-end="858" vertical-scroll-proportion="0.3327787">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/io/Closeable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="17" selection-start="489" selection-end="489" vertical-scroll-proportion="0.5823627">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/XML_Properties/XML2Properties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="10" selection-start="457" selection-end="457" vertical-scroll-proportion="0.58402663">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
