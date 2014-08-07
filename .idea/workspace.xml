@@ -6,7 +6,7 @@
     </list>
     <ignored path="java_learning.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1407401689066" ignored="false" />
+    <file path="/Dummy.txt" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1407402127345" ignored="false" />
     <file path="/printStdIn.java" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1405317864468" ignored="false" />
     <file path="/pom.xml" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1405903589596" ignored="false" />
     <file path="/Customer.java" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1405331632547" ignored="false" />
@@ -540,7 +540,11 @@
       <created>1407401711250</created>
       <updated>1407401711250</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="io etc.">
+      <created>1407402130771</created>
+      <updated>1407402130771</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
