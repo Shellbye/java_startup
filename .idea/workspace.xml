@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bf23f92-1830-4b77-af66-1ed9a9218fd3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java_learning.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1407402127345" ignored="false" />
+    <file path="/Dummy.txt" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1407402136280" ignored="false" />
     <file path="/printStdIn.java" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1405317864468" ignored="false" />
     <file path="/pom.xml" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1405903589596" ignored="false" />
     <file path="/Customer.java" changelist="0bf23f92-1830-4b77-af66-1ed9a9218fd3" time="1405331632547" ignored="false" />
@@ -83,7 +84,17 @@
     <favorites_list name="java_learning" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="7" selection-start="27" selection-end="27" vertical-scroll-proportion="0.08680555">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -103,7 +114,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/XML_Properties/PropertiesXMLExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/XML_Properties/XML2Properties.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/JDBC/JDBCExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/JDBC/JDBCStatementCreateExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/JDBC/JDBCCallableStatementINParameterExample.java" />
@@ -117,6 +127,7 @@
         <option value="$PROJECT_DIR$/src/main/java/datetime/DateToString.java" />
         <option value="$PROJECT_DIR$/src/main/java/datetime/StringToDate.java" />
         <option value="$PROJECT_DIR$/src/main/java/javaIO/RedirectConsole.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -200,46 +211,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java_learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java_learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java_learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java_learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -544,12 +515,16 @@
       <created>1407402130771</created>
       <updated>1407402130771</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="io etc.">
+      <created>1407402144706</created>
+      <updated>1407402144706</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -569,7 +544,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20802139" sideWeight="0.7061452" order="0" side_tool="false" content_ui="combo" x="726" y="72" width="467" height="895" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20802139" sideWeight="0.7061452" order="0" side_tool="false" content_ui="combo" x="726" y="72" width="467" height="895" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29385474" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -647,11 +622,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1-sources.jar!/org/apache/http/impl/client/BasicResponseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="13" selection-start="2034" selection-end="2034" vertical-scroll-proportion="0.7903494" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ZhongHuaYingCai.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="0" selection-start="1298" selection-end="1298" vertical-scroll-proportion="0.8680556">
@@ -737,6 +707,13 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/javaIO/RedirectConsole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="67" selection-start="410" selection-end="410" vertical-scroll-proportion="0.4575707" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="7" selection-start="27" selection-end="27" vertical-scroll-proportion="0.08680555">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
