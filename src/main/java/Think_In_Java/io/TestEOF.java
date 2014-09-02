@@ -7,7 +7,7 @@ public class TestEOF {
   throws IOException {
     DataInputStream in = new DataInputStream(
       new BufferedInputStream(
-        new FileInputStream("TestEOF.java")));
+        new FileInputStream("README.md")));
     while(in.available() != 0)
       System.out.print((char)in.readByte());
   }

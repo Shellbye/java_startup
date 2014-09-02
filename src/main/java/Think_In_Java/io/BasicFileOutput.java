@@ -7,7 +7,7 @@ public class BasicFileOutput {
   throws IOException {
     BufferedReader in = new BufferedReader(
       new StringReader(
-        BufferedInputFile.read("BasicFileOutput.java")));
+        BufferedInputFile.read("README.md")));
     PrintWriter out = new PrintWriter(
       new BufferedWriter(new FileWriter(file)));
     int lineCount = 1;
