@@ -78,6 +78,7 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpasyncclient:4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.3.1" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse:swt:3.3.0-v3346" level="project" />
   </component>
 </module>
 

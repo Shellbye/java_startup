@@ -1,4 +1,4 @@
-<?xml_old version="1.0" ?>
+<?xml version="1.0" ?>
 
 <project
  basedir="."
@@ -6,7 +6,7 @@
  name="Thinking in Java, 4th Edition by Bruce Eckel (chapter: net)">
 
   <description>
-    build.xml_old for the source code for the net chapter of
+    build.xml for the source code for the net chapter of
     Thinking in Java, 4th Edition by Bruce Eckel
     Source code available at http://www.MindView.net
     See copyright notice in CopyRight.txt

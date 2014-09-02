@@ -193,6 +193,12 @@
             <artifactId>scribe</artifactId>
             <version>1.3.5</version>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>swt</artifactId>
+            <version>3.3.0-v3346</version>
+        </dependency>
+
     </dependencies>
     
 </project>
