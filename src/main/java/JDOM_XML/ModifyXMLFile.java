@@ -23,7 +23,7 @@ public class ModifyXMLFile {
         try {
 
             SAXBuilder builder = new SAXBuilder();
-            File xmlFile = new File("c:\\file.xml");
+            File xmlFile = new File("c:\\file.xml_old");
 
             Document doc = (Document) builder.build(xmlFile);
             Element rootNode = doc.getRootElement();
@@ -46,7 +46,7 @@ public class ModifyXMLFile {
 
             // display nice nice
             xmlOutput.setFormat(Format.getPrettyFormat());
-            xmlOutput.output(doc, new FileWriter("c:\\file.xml"));
+            xmlOutput.output(doc, new FileWriter("c:\\file.xml_old"));
 
             // xmlOutput.output(doc, System.out);
 

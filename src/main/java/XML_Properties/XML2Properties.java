@@ -17,8 +17,8 @@ public class XML2Properties {
     {
         Properties props = new Properties();
 
-        InputStream is = new FileInputStream("d:/email-configuration.xml");
-        //load the xml file into properties format
+        InputStream is = new FileInputStream("d:/email-configuration.xml_old");
+        //load the xml_old file into properties format
         props.loadFromXML(is);
 
         String email = props.getProperty("email.support");

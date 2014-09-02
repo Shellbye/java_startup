@@ -85,7 +85,7 @@ public class ReadXMLFile {
 
             };
 
-            saxParser.parse("D:\\file.xml", handler);
+            saxParser.parse("D:\\file.xml_old", handler);
 
         } catch (Exception e) {
             e.printStackTrace();

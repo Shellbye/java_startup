@@ -17,7 +17,7 @@ public class JAXBExample {
 
         try {
 
-            File file = new File("C:\\fileJAXB.xml");
+            File file = new File("C:\\fileJAXB.xml_old");
             JAXBContext jaxbContext = JAXBContext.newInstance(Customer.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();

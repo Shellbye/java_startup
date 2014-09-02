@@ -47,7 +47,7 @@ public class WriteXMLFile {
 
             // display nice nice
             xmlOutput.setFormat(Format.getPrettyFormat());
-            xmlOutput.output(doc, new FileWriter("d:\\filejdom.xml"));
+            xmlOutput.output(doc, new FileWriter("d:\\filejdom.xml_old"));
 
             System.out.println("File Saved!");
         } catch (IOException io) {

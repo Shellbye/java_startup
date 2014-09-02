@@ -19,7 +19,7 @@ public class ReadXMLFile {
     public static void main(String[] args) {
 
         SAXBuilder builder = new SAXBuilder();
-        File xmlFile = new File("d:\\staff.xml");
+        File xmlFile = new File("d:\\staff.xml_old");
 
         try {
 

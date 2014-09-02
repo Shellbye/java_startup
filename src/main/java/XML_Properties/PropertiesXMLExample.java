@@ -20,7 +20,7 @@ public class PropertiesXMLExample
         props.setProperty("email.support", "donot-spam-me@nospam.com");
 
         //where to store?
-        OutputStream os = new FileOutputStream("d:\\email-configuration2.xml");
+        OutputStream os = new FileOutputStream("d:\\email-configuration2.xml_old");
 
         //store the properties detail into a pre-defined XML file
         props.storeToXML(os, "Support Email","UTF-8");

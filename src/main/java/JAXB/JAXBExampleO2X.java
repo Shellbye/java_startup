@@ -22,7 +22,7 @@ public class JAXBExampleO2X {
 
         try {
 
-            File file = new File("C:\\fileJAXB.xml");
+            File file = new File("C:\\fileJAXB.xml_old");
             JAXBContext jaxbContext = JAXBContext.newInstance(Customer.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
