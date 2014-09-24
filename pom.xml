@@ -198,6 +198,13 @@
             <artifactId>swt</artifactId>
             <version>3.3.0-v3346</version>
         </dependency>
+        <dependency>
+            <groupId>com.sun</groupId>
+            <artifactId>tools</artifactId>
+            <version>1.7.0</version>
+            <scope>system</scope>
+            <systemPath>${java.home}/../lib/tools.jar</systemPath>
+        </dependency>
 
     </dependencies>
     
