@@ -9,11 +9,18 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        String a = "asdf=123;asdfa";
-        String b = "adfadfadfadf";
-        String[] aa = a.split(";");
-        String[] bb = b.split(";");
-        print(aa.length);
-        print(bb.length);
+        String a = "aaaaaaa<br>bbbbbbb<br />ccccccc<br/>ddddddddd<br>eeeeeee";
+        if( a instanceof String){
+            print("yes");
+        }
+        print(a);
+        String b = brToN(a);
+        print(b);
+    }
+
+    public static String brToN(String in){
+        return in.replaceAll("<br>", "\n")
+                .replaceAll("<br />", "\n")
+                .replaceAll("<br/>", "\n");
     }
 }
