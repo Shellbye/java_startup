@@ -14,7 +14,6 @@ import org.apache.lucene.store.FSDirectory;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.Date;
 
 /**
  * Created by shellbye on 10/23/14.
@@ -23,6 +22,7 @@ public class LuTestSearch {
     public static void main(String[] arg) throws Exception{
         //使用LuTestIndex.java建立索引之后索引所在的目录（indexPath）
         String index = "/home/shellbye/result/";
+        //这里的field的值取决于LuTestIndex#100中doc.add时的值
         String field = "contents";
 
         IndexReader reader = DirectoryReader.open(FSDirectory.open(new File(index)));

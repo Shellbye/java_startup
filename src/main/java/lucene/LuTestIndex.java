@@ -24,7 +24,6 @@ public class LuTestIndex {
 
         Directory dir = FSDirectory.open(new File(indexPath));
         final File docDir = new File(docsPath);
-        // :Post-Release-Update-Version.LUCENE_XY:
         Analyzer analyzer = new StandardAnalyzer();
         IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_4_10_1, analyzer);
 
@@ -34,10 +33,7 @@ public class LuTestIndex {
 
         IndexWriter writer = new IndexWriter(dir, iwc);
         indexDocs(writer, docDir);
-//        http://stackoverflow.com/questions/3802021/no-segments-file-found
         writer.close();
-
-
     }
 
     /**
