@@ -29,7 +29,7 @@ public class LuTestIndex {
 
         // Create a new index in the directory, removing any
         // previously indexed documents:
-        iwc.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
+        iwc.setOpenMode(IndexWriterConfig.OpenMode.CREATE_OR_APPEND);
 
         IndexWriter writer = new IndexWriter(dir, iwc);
         indexDocs(writer, docDir);
