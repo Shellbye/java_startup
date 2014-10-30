@@ -74,8 +74,8 @@ public class ZhiHuUserTag {
                         // 4.找到真正的问题，以及其对应的tags
                         DBObject questionObject = zhihu_questionCursor.next();
                         String tags = (String) questionObject.get("tags");
+                        logger.info("Enter the tags-for loop and the tags is " + tags);
                         for (String tag : tags.split(",")) {
-                            logger.info("Enter the tags-for loop and the tags is " + tags);
                             String trimmedTag = tag.trim();
                             if (tagAlreadyExists(zhihu_user_tag_Object, trimmedTag)) {
                                 tagCountIncrease(zhihu_user_question_tagCollection, zhihu_user_tag_Object, trimmedTag);
