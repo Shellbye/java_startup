@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="error">
+    <Appenders>
+        <!--<Console name="Console" target="SYSTEM_OUT">-->
+            <!--<PatternLayout>-->
+                <!--<pattern>%d %p %logger{36} %msg%n</pattern>-->
+            <!--</PatternLayout>-->
+        <!--</Console>-->
+
+        <File name="File" fileName="process.log">
+            <PatternLayout>
+                <Pattern>%date %p %logger{36} %method %line %msg%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <!--这里的level不会被记录，记录的是大于这个level的-->
+        <Logger name="mongoDb.ZhiHuUserTag" level="trace">
+            <AppenderRef ref="File"/>
+        </Logger>
+        <!--The root logger has no parent so additivity does not apply to it.-->
+        <!--<Root level="error">-->
+            <!--<AppenderRef ref="Console"/>-->
+        <!--</Root>-->
+    </Loggers>
+</Configuration>
