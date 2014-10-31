@@ -3,6 +3,7 @@ package mongoDb;
 import com.mongodb.*;
 
 import java.security.MessageDigest;
+import java.util.Arrays;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,9 +26,14 @@ public class ZhiHuUserTag {
             DBCursor zhihuuserCursor = zhihuuserCollection.find();
 
 
-            // todo while
-            for (int i = 0; i < 5; i++) {
-                logger.info("Enter the user-for loop and process number " + i);
+            int i = 0;
+            while(zhihuuserCursor.hasNext()){
+                // for test purpose
+                if (i >= 10){
+                    logger.info("Quiting...");
+                    break;
+                }
+                logger.info("Enter the user-while loop and process number " + i++);
                 // 1.在zhihuuser中获取用户的id，即name字段
                 DBObject currentZhiHuUser = zhihuuserCursor.next();
                 String name = (String) currentZhiHuUser.get("name");
@@ -48,20 +54,20 @@ public class ZhiHuUserTag {
                 BasicDBObject query = new BasicDBObject();
                 query.put("name", name);
                 DBObject zhiHuAnswer = zhihu_answersCollection.findOne(query);
-
+                if (zhiHuAnswer == null){
+                    continue;
+                }
                 update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
                         "zhihu_answers_id", zhiHuAnswer.get("_id"));
 
                 DBObject zhihuQuestions = (DBObject) zhiHuAnswer.get("questions");
                 // 3.遍历所有的问题的内容，通过对内容进行md5找到真正的问题
                 for (String key : zhihuQuestions.keySet()) {
-                    logger.info("Enter the question-for loop and process question " + zhihuQuestions.get("_id"));
+                    logger.info("Enter the question-for loop and process question NO." + key);
                     String question = (String) zhihuQuestions.get(key);
                     String idOfQuestion = md5(question);
 
 
-                    update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
-                            "zhihu_question_id", zhihuQuestions.get("_id"));
                     update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
                             "zhihu_question_md5_id", idOfQuestion);
 
@@ -73,6 +79,10 @@ public class ZhiHuUserTag {
                     if (zhihu_questionCursor.hasNext()) {
                         // 4.找到真正的问题，以及其对应的tags
                         DBObject questionObject = zhihu_questionCursor.next();
+                        String questionId = questionObject.get("_id").toString();
+                        update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
+                                "zhihu_question_id", questionId);
+                        logger.info("Got the real question " + questionId);
                         String tags = (String) questionObject.get("tags");
                         logger.info("Enter the tags-for loop and the tags is " + tags);
                         for (String tag : tags.split(",")) {
