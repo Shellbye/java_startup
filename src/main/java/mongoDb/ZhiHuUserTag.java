@@ -29,11 +29,11 @@ public class ZhiHuUserTag {
             int i = 0;
             while (zhihuuserCursor.hasNext()) {
                 // for test purpose
-                if (i >= 10) {
+                if (i++ >= 10) {
                     logger.info("Quiting...");
                     break;
                 }
-                logger.info("Enter the user-while loop and process number " + i++);
+                logger.info("Enter the user-while loop and process number " + i);
                 // 1.在zhihuuser中获取用户的id，即name字段
                 DBObject currentZhiHuUser = zhihuuserCursor.next();
                 String name = (String) currentZhiHuUser.get("name");
