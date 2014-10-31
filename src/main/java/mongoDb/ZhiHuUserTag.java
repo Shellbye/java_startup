@@ -27,9 +27,9 @@ public class ZhiHuUserTag {
 
 
             int i = 0;
-            while(zhihuuserCursor.hasNext()){
+            while (zhihuuserCursor.hasNext()) {
                 // for test purpose
-                if (i >= 10){
+                if (i >= 10) {
                     logger.info("Quiting...");
                     break;
                 }
@@ -54,7 +54,7 @@ public class ZhiHuUserTag {
                 BasicDBObject query = new BasicDBObject();
                 query.put("name", name);
                 DBObject zhiHuAnswer = zhihu_answersCollection.findOne(query);
-                if (zhiHuAnswer == null){
+                if (zhiHuAnswer == null) {
                     continue;
                 }
                 update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
@@ -119,27 +119,52 @@ public class ZhiHuUserTag {
         return tagsInfo.get(tag) != null;
     }
 
-    public static void tagCountIncrease(DBCollection collection, DBObject dbObject, String tag) {
+    public static void tagCountIncrease(DBCollection collection, DBObject dbObject, String tag) throws Exception {
         logger.info("tag " + tag + " increase");
         BasicDBObject tagsInfo = (BasicDBObject) dbObject.get("tags_info");
         BasicDBObject t = (BasicDBObject) tagsInfo.get(tag);
         t.put("count", (int) t.get("count") + 1);
-        doRank();
+        doRank(collection, dbObject);
     }
 
-    public static void addTag(DBCollection collection, DBObject dbObject, String tag) {
+    public static void addTag(DBCollection collection, DBObject dbObject, String tag) throws Exception {
         logger.info("add tag " + tag);
         BasicDBObject tagsInfo = (BasicDBObject) dbObject.get("tags_info");
-            if (tag.contains(".")) {
-                tagsInfo.put(tag.replace(".", "\\u002e"), new BasicDBObject("count", 1).append("rank", -1));
-            } else {
-                tagsInfo.put(tag, new BasicDBObject("count", 1).append("rank", -1));
-            }
-            collection.save(dbObject);
+        if (tag.contains(".")) {
+            tagsInfo.put(tag.replace(".", "\\u002e"), new BasicDBObject("count", 1).append("rank", -1));
+        } else {
+            tagsInfo.put(tag, new BasicDBObject("count", 1).append("rank", -1));
+        }
+        collection.save(dbObject);
+        doRank(collection, dbObject);
     }
 
-    public static void doRank() {
-        // todo
+    public static void doRank(DBCollection collection, DBObject dbObject) throws Exception {
+        logger.info("Enter doRank and rank user " + dbObject.get("_id"));
+        BasicDBObject basicDBObject = (BasicDBObject) dbObject.get("tags_info");
+
+        // 1.创建比较对象
+        Tag[] tags = new Tag[basicDBObject.size()];
+        int i = 0;
+        for (String key : basicDBObject.keySet()) {
+            BasicDBObject tag = (BasicDBObject) basicDBObject.get(key);
+            Tag new_tag = new Tag(tag.get("count"), tag.get("rank"), key);
+            tags[i++] = new_tag;
+        }
+
+        // 2.对象排序
+        Arrays.sort(tags);
+
+        // 3.存储排序结果
+        int j = 0;
+        for (Tag t : tags) {
+            BasicDBObject tag = (BasicDBObject) basicDBObject.get(t.getKey());
+            tag.put("rank", j);
+            j++;
+        }
+
+        // 4.存入数据库
+        collection.save(dbObject);
     }
 
     public static String md5(String in) throws Exception {
