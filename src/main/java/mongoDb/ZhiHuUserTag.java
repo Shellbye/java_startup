@@ -93,6 +93,7 @@ public class ZhiHuUserTag {
                                 addTag(zhihu_user_question_tagCollection, zhihu_user_tag_Object, trimmedTag);
                             }
                         }
+                        doRank(zhihu_user_question_tagCollection, zhihu_user_tag_Object);
                     }
                 }
             }
@@ -124,7 +125,7 @@ public class ZhiHuUserTag {
         BasicDBObject tagsInfo = (BasicDBObject) dbObject.get("tags_info");
         BasicDBObject t = (BasicDBObject) tagsInfo.get(tag);
         t.put("count", (int) t.get("count") + 1);
-        doRank(collection, dbObject);
+//        doRank(collection, dbObject);
     }
 
     public static void addTag(DBCollection collection, DBObject dbObject, String tag) throws Exception {
@@ -136,7 +137,7 @@ public class ZhiHuUserTag {
             tagsInfo.put(tag, new BasicDBObject("count", 1).append("rank", -1));
         }
         collection.save(dbObject);
-        doRank(collection, dbObject);
+//        doRank(collection, dbObject);
     }
 
     public static void doRank(DBCollection collection, DBObject dbObject) throws Exception {
