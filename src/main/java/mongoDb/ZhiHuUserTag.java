@@ -4,6 +4,7 @@ import com.mongodb.*;
 
 import java.security.MessageDigest;
 import java.util.Arrays;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,19 +24,19 @@ public class ZhiHuUserTag {
             DBCollection zhihuuserCollection = db.getCollection("zhihuuser");
             DBCollection zhihu_questionCollection = db.getCollection("zhihu_question");
             DBCollection zhihu_user_question_tagCollection = db.getCollection("zhihu_user_question_tag");
-            DBCursor zhihuuserCursor = zhihuuserCollection.find();
+            BasicDBObject fields = new BasicDBObject("name",1);
+            List<DBObject> zhihuuserList = zhihuuserCollection.find(new BasicDBObject(), fields).toArray();
 
 
             int i = 0;
-            while (zhihuuserCursor.hasNext()) {
+            for (DBObject currentZhiHuUser : zhihuuserList) {
                 // for test purpose
-                if (i++ >= 10) {
+                if (i++ >= 100) {
                     logger.info("Quiting...");
                     break;
                 }
-//                logger.info("Enter the user-while loop and process number " + i);
+                logger.info("Enter the user-while loop and process number " + i);
                 // 1.在zhihuuser中获取用户的id，即name字段
-                DBObject currentZhiHuUser = zhihuuserCursor.next();
                 String name = (String) currentZhiHuUser.get("name");
 
                 BasicDBObject queryOfUserTag = new BasicDBObject();
@@ -43,7 +44,9 @@ public class ZhiHuUserTag {
                 DBCursor zhihu_user_question_tagCursor = zhihu_user_question_tagCollection.find(queryOfUserTag);
                 DBObject zhihu_user_tag_Object;
                 if (zhihu_user_question_tagCursor.hasNext()) {
-                    zhihu_user_tag_Object = zhihu_user_question_tagCursor.next();
+                    // todo 已有101个用户在数据库，这里就暂时不再重复处理，直接跳过
+                    continue;
+//                    zhihu_user_tag_Object = zhihu_user_question_tagCursor.next();
                 } else {
                     zhihu_user_tag_Object = create(zhihu_user_question_tagCollection, name);
                 }
@@ -74,17 +77,16 @@ public class ZhiHuUserTag {
 
                     BasicDBObject queryOfQuestion = new BasicDBObject();
                     queryOfQuestion.put("id", idOfQuestion);
-                    DBCursor zhihu_questionCursor = zhihu_questionCollection.find(queryOfQuestion);
+                    DBObject zhihu_questionObject = zhihu_questionCollection.findOne(queryOfQuestion);
 
-                    if (zhihu_questionCursor.hasNext()) {
+                    if (zhihu_questionObject != null) {
                         // 4.找到真正的问题，以及其对应的tags
-                        DBObject questionObject = zhihu_questionCursor.next();
-                        String questionId = questionObject.get("_id").toString();
+                        String questionId = zhihu_questionObject.get("_id").toString();
                         update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
                                 "zhihu_question_id", questionId);
-//                        logger.info("Got the real question " + questionId);
-                        String tags = (String) questionObject.get("tags");
-//                        logger.info("Enter the tags-for loop and the tags is " + tags);
+                        logger.info("Got the real question " + questionId);
+                        String tags = (String) zhihu_questionObject.get("tags");
+                        logger.info("Enter the tags-for loop and the tags is " + tags);
                         for (String tag : tags.split(",")) {
                             String trimmedTag = tag.trim();
                             if (tagAlreadyExists(zhihu_user_tag_Object, trimmedTag)) {
@@ -103,14 +105,14 @@ public class ZhiHuUserTag {
     }
 
     public static DBObject create(DBCollection collection, String name) {
-//        logger.info("create name " + name);
+        logger.info("create name " + name);
         BasicDBObject basicDBObject = new BasicDBObject("name", name).append("tags_info", new BasicDBObject());
         collection.insert(basicDBObject);
         return basicDBObject;
     }
 
     public static void update(DBCollection collection, DBObject dbObject, String key, Object value) {
-//        logger.info("update " + dbObject.get("_id") + " key " + key + " to " + value);
+        logger.info("update " + dbObject.get("_id") + " key " + key + " to " + value);
         dbObject.put(key, value);
         collection.save(dbObject);
     }
@@ -121,7 +123,7 @@ public class ZhiHuUserTag {
     }
 
     public static void tagCountIncrease(DBCollection collection, DBObject dbObject, String tag) throws Exception {
-//        logger.info("tag " + tag + " increase");
+        logger.info("tag " + tag + " increase");
         BasicDBObject tagsInfo = (BasicDBObject) dbObject.get("tags_info");
         BasicDBObject t = (BasicDBObject) tagsInfo.get(tag);
         t.put("count", (int) t.get("count") + 1);
@@ -129,7 +131,7 @@ public class ZhiHuUserTag {
     }
 
     public static void addTag(DBCollection collection, DBObject dbObject, String tag) throws Exception {
-//        logger.info("add tag " + tag);
+        logger.info("add tag " + tag);
         BasicDBObject tagsInfo = (BasicDBObject) dbObject.get("tags_info");
         if (tag.contains(".")) {
             tagsInfo.put(tag.replace(".", "\\u002e"), new BasicDBObject("count", 1).append("rank", -1));
@@ -141,7 +143,7 @@ public class ZhiHuUserTag {
     }
 
     public static void doRank(DBCollection collection, DBObject dbObject) throws Exception {
-//        logger.info("Enter doRank and rank user " + dbObject.get("_id"));
+        logger.info("Enter doRank and rank user " + dbObject.get("_id"));
         BasicDBObject basicDBObject = (BasicDBObject) dbObject.get("tags_info");
 
         // 1.创建比较对象
