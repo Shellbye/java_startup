@@ -29,11 +29,11 @@ public class ZhiHuUserTag {
             int i = 0;
             for (DBObject currentZhiHuUser : zhihuuserList) {
                 i++;
-                // for test purpose
-//                if (i >= 184) {
-//                    logger.info("Quiting...");
-//                    break;
-//                }
+//                for test purpose
+                if (i >= 100) {
+                    logger.info("Quiting...");
+                    break;
+                }
                 logger.info("Enter the user-for loop and process number " + i);
                 String name = (String) currentZhiHuUser.get("name");
 
@@ -55,7 +55,7 @@ public class ZhiHuUserTag {
     }
 
     public static void init() throws Exception{
-        mongoClient = new MongoClient("192.168.2.221", 27017);
+        mongoClient = new MongoClient("192.168.2.222", 27017);
         db = mongoClient.getDB("user");
 
         zhihuuserCollection = db.getCollection("zhihuuser");
@@ -101,11 +101,6 @@ public class ZhiHuUserTag {
             logger.info("Enter the question-for loop and process question NO." + key);
             String question = (String) zhihuQuestions.get(key);
             String idOfQuestion = md5(question);
-
-
-            update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
-                    "zhihu_question_md5_id", idOfQuestion);
-
 
             BasicDBObject queryOfQuestion = new BasicDBObject();
             queryOfQuestion.put("id", idOfQuestion);
