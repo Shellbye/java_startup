@@ -22,7 +22,7 @@ public class ZhiHuUserTag {
     static List<DBObject> zhihuuserList;
 
     public static void main(String[] args) {
-        logger.info("Enter the main");
+        logger.warn("Enter the main");
         try {
             // 初始化并获取zhihuuserList
             init();
@@ -30,16 +30,16 @@ public class ZhiHuUserTag {
             for (DBObject currentZhiHuUser : zhihuuserList) {
                 i++;
 //                for test purpose
-                if (i >= 100) {
-                    logger.info("Quiting...");
+                if (i >= 10) {
+                    logger.warn("Quiting...");
                     break;
                 }
-                logger.info("Enter the user-for loop and process number " + i);
+//                logger.info("Enter the user-for loop and process number " + i);
                 String name = (String) currentZhiHuUser.get("name");
 
                 DBObject zhihu_user_tag_Object = getUserTag(name);
                 if (zhihu_user_tag_Object == null) {
-                    logger.info("skip number " + i);
+//                    logger.info("skip number " + i);
                     continue;
                 }
 
@@ -98,7 +98,7 @@ public class ZhiHuUserTag {
             throws Exception{
         // 3.遍历所有的问题的内容，通过对内容进行md5找到真正的问题
         for (String key : zhihuQuestions.keySet()) {
-            logger.info("Enter the question-for loop and process question NO." + key);
+//            logger.info("Enter the question-for loop and process question NO." + key);
             String question = (String) zhihuQuestions.get(key);
             String idOfQuestion = md5(question);
 
@@ -118,9 +118,9 @@ public class ZhiHuUserTag {
         String questionId = zhihu_questionObject.get("_id").toString();
         update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
                 "zhihu_question_id", questionId);
-        logger.info("Got the real question " + questionId);
+//        logger.info("Got the real question " + questionId);
         String tags = (String) zhihu_questionObject.get("tags");
-        logger.info("Enter the tags-for loop and the tags is " + tags);
+//        logger.info("Enter the tags-for loop and the tags is " + tags);
         for (String tag : tags.split(",")) {
             String trimmedTag = tag.trim();
             if (tagAlreadyExists(zhihu_user_tag_Object, trimmedTag)) {
@@ -133,14 +133,14 @@ public class ZhiHuUserTag {
     }
 
     public static DBObject create(DBCollection collection, String name) {
-        logger.info("create name " + name);
+//        logger.info("create name " + name);
         BasicDBObject basicDBObject = new BasicDBObject("name", name).append("tags_info", new BasicDBObject());
         collection.insert(basicDBObject);
         return basicDBObject;
     }
 
     public static void update(DBCollection collection, DBObject dbObject, String key, Object value) {
-        logger.info("update " + dbObject.get("_id") + " key " + key + " to " + value);
+//        logger.info("update " + dbObject.get("_id") + " key " + key + " to " + value);
         dbObject.put(key, value);
         collection.save(dbObject);
     }
@@ -151,7 +151,7 @@ public class ZhiHuUserTag {
     }
 
     public static void tagCountIncrease(DBCollection collection, DBObject dbObject, String tag) throws Exception {
-        logger.info("tag " + tag + " increase");
+//        logger.info("tag " + tag + " increase");
         BasicDBObject tagsInfo = (BasicDBObject) dbObject.get("tags_info");
         BasicDBObject t = (BasicDBObject) tagsInfo.get(tag);
         t.put("count", (int) t.get("count") + 1);
@@ -159,7 +159,7 @@ public class ZhiHuUserTag {
     }
 
     public static void addTag(DBCollection collection, DBObject dbObject, String tag) throws Exception {
-        logger.info("add tag " + tag);
+//        logger.info("add tag " + tag);
         BasicDBObject tagsInfo = (BasicDBObject) dbObject.get("tags_info");
         if (tag.contains(".")) {
             tagsInfo.put(tag.replace(".", "\\u002e"), new BasicDBObject("count", 1).append("rank", -1));
@@ -171,7 +171,7 @@ public class ZhiHuUserTag {
     }
 
     public static void doRank(DBCollection collection, DBObject dbObject) throws Exception {
-        logger.info("Enter doRank and rank user " + dbObject.get("_id"));
+//        logger.info("Enter doRank and rank user " + dbObject.get("_id"));
         BasicDBObject basicDBObject = (BasicDBObject) dbObject.get("tags_info");
 
         // 1.创建比较对象
