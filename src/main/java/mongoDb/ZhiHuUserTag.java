@@ -14,94 +14,127 @@ import org.apache.logging.log4j.Logger;
  */
 public class ZhiHuUserTag {
     static final Logger logger = LogManager.getLogger();
+    static MongoClient mongoClient;
+    static DBCollection zhihuuserCollection;
+    static DBCollection zhihu_questionCollection;
+    static DBCollection zhihu_user_question_tagCollection;
+    static DB db;
+    static List<DBObject> zhihuuserList;
 
     public static void main(String[] args) {
         logger.info("Enter the main");
         try {
-            MongoClient mongoClient = new MongoClient("192.168.2.221", 27017);
-            DB db = mongoClient.getDB("user");
-
-            DBCollection zhihuuserCollection = db.getCollection("zhihuuser");
-            DBCollection zhihu_questionCollection = db.getCollection("zhihu_question");
-            DBCollection zhihu_user_question_tagCollection = db.getCollection("zhihu_user_question_tag");
-            BasicDBObject fields = new BasicDBObject("name",1);
-            List<DBObject> zhihuuserList = zhihuuserCollection.find(new BasicDBObject(), fields).toArray();
-
-
+            // 初始化并获取zhihuuserList
+            init();
             int i = 0;
             for (DBObject currentZhiHuUser : zhihuuserList) {
+                i++;
                 // for test purpose
-                if (i++ >= 100) {
-                    logger.info("Quiting...");
-                    break;
-                }
-                logger.info("Enter the user-while loop and process number " + i);
-                // 1.在zhihuuser中获取用户的id，即name字段
+//                if (i >= 184) {
+//                    logger.info("Quiting...");
+//                    break;
+//                }
+                logger.info("Enter the user-for loop and process number " + i);
                 String name = (String) currentZhiHuUser.get("name");
 
-                BasicDBObject queryOfUserTag = new BasicDBObject();
-                queryOfUserTag.put("name", name);
-                DBCursor zhihu_user_question_tagCursor = zhihu_user_question_tagCollection.find(queryOfUserTag);
-                DBObject zhihu_user_tag_Object;
-                if (zhihu_user_question_tagCursor.hasNext()) {
-                    // todo 已有101个用户在数据库，这里就暂时不再重复处理，直接跳过
-                    continue;
-//                    zhihu_user_tag_Object = zhihu_user_question_tagCursor.next();
-                } else {
-                    zhihu_user_tag_Object = create(zhihu_user_question_tagCollection, name);
-                }
-
-
-                // 2.通过name在zhihu_answers中找到用户的所有问题
-                DBCollection zhihu_answersCollection = db.getCollection("zhihu_answers");
-                BasicDBObject query = new BasicDBObject();
-                query.put("name", name);
-                DBObject zhiHuAnswer = zhihu_answersCollection.findOne(query);
-                if (zhiHuAnswer == null) {
+                DBObject zhihu_user_tag_Object = getUserTag(name);
+                if (zhihu_user_tag_Object == null) {
+                    logger.info("skip number " + i);
                     continue;
                 }
-                update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
-                        "zhihu_answers_id", zhiHuAnswer.get("_id"));
 
-                DBObject zhihuQuestions = (DBObject) zhiHuAnswer.get("questions");
-                // 3.遍历所有的问题的内容，通过对内容进行md5找到真正的问题
-                for (String key : zhihuQuestions.keySet()) {
-//                    logger.info("Enter the question-for loop and process question NO." + key);
-                    String question = (String) zhihuQuestions.get(key);
-                    String idOfQuestion = md5(question);
-
-
-                    update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
-                            "zhihu_question_md5_id", idOfQuestion);
-
-
-                    BasicDBObject queryOfQuestion = new BasicDBObject();
-                    queryOfQuestion.put("id", idOfQuestion);
-                    DBObject zhihu_questionObject = zhihu_questionCollection.findOne(queryOfQuestion);
-
-                    if (zhihu_questionObject != null) {
-                        // 4.找到真正的问题，以及其对应的tags
-                        String questionId = zhihu_questionObject.get("_id").toString();
-                        update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
-                                "zhihu_question_id", questionId);
-                        logger.info("Got the real question " + questionId);
-                        String tags = (String) zhihu_questionObject.get("tags");
-                        logger.info("Enter the tags-for loop and the tags is " + tags);
-                        for (String tag : tags.split(",")) {
-                            String trimmedTag = tag.trim();
-                            if (tagAlreadyExists(zhihu_user_tag_Object, trimmedTag)) {
-                                tagCountIncrease(zhihu_user_question_tagCollection, zhihu_user_tag_Object, trimmedTag);
-                            } else {
-                                addTag(zhihu_user_question_tagCollection, zhihu_user_tag_Object, trimmedTag);
-                            }
-                        }
-                        doRank(zhihu_user_question_tagCollection, zhihu_user_tag_Object);
-                    }
+                DBObject zhihuQuestions = getQuestions(zhihu_user_tag_Object, name);
+                if (zhihuQuestions == null) {
+                    continue;
                 }
+                processQuestions(zhihuQuestions, zhihu_user_tag_Object);
             }
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }
+    }
+
+    public static void init() throws Exception{
+        mongoClient = new MongoClient("192.168.2.221", 27017);
+        db = mongoClient.getDB("user");
+
+        zhihuuserCollection = db.getCollection("zhihuuser");
+        zhihu_questionCollection = db.getCollection("zhihu_question");
+        zhihu_user_question_tagCollection = db.getCollection("zhihu_user_question_tag");
+        BasicDBObject fields = new BasicDBObject("name",1);
+        zhihuuserList = zhihuuserCollection.find(new BasicDBObject(), fields).toArray();
+    }
+
+    public static DBObject getUserTag(String name){
+        // 1.在zhihuuser中获取用户的id，即name字段
+        BasicDBObject queryOfUserTag = new BasicDBObject();
+        queryOfUserTag.put("name", name);
+        DBCursor zhihu_user_question_tagCursor = zhihu_user_question_tagCollection.find(queryOfUserTag);
+        if (zhihu_user_question_tagCursor.hasNext()) {
+            // todo 已有101个用户在数据库，这里就暂时不再重复处理，直接跳过
+            return null;
+//          zhihu_user_tag_Object = zhihu_user_question_tagCursor.next();
+        } else {
+            return create(zhihu_user_question_tagCollection, name);
+        }
+    }
+
+    public static DBObject getQuestions(DBObject zhihu_user_tag_Object, String name) {
+        // 2.通过name在zhihu_answers中找到用户的所有问题
+        DBCollection zhihu_answersCollection = db.getCollection("zhihu_answers");
+        BasicDBObject query = new BasicDBObject();
+        query.put("name", name);
+        DBObject zhiHuAnswer = zhihu_answersCollection.findOne(query);
+        if (zhiHuAnswer == null) {
+            return null;
+        }
+        update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
+                "zhihu_answers_id", zhiHuAnswer.get("_id"));
+
+        return (DBObject) zhiHuAnswer.get("questions");
+    }
+
+    public static void processQuestions(DBObject zhihuQuestions, DBObject zhihu_user_tag_Object)
+            throws Exception{
+        // 3.遍历所有的问题的内容，通过对内容进行md5找到真正的问题
+        for (String key : zhihuQuestions.keySet()) {
+            logger.info("Enter the question-for loop and process question NO." + key);
+            String question = (String) zhihuQuestions.get(key);
+            String idOfQuestion = md5(question);
+
+
+            update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
+                    "zhihu_question_md5_id", idOfQuestion);
+
+
+            BasicDBObject queryOfQuestion = new BasicDBObject();
+            queryOfQuestion.put("id", idOfQuestion);
+            DBObject zhihu_questionObject = zhihu_questionCollection.findOne(queryOfQuestion);
+
+            if (zhihu_questionObject != null) {
+                processQuestionTag(zhihu_questionObject, zhihu_user_tag_Object);
+            }
+        }
+    }
+
+    public static void processQuestionTag(DBObject zhihu_questionObject, DBObject zhihu_user_tag_Object)
+            throws Exception{
+        // 4.找到真正的问题，以及其对应的tags
+        String questionId = zhihu_questionObject.get("_id").toString();
+        update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
+                "zhihu_question_id", questionId);
+        logger.info("Got the real question " + questionId);
+        String tags = (String) zhihu_questionObject.get("tags");
+        logger.info("Enter the tags-for loop and the tags is " + tags);
+        for (String tag : tags.split(",")) {
+            String trimmedTag = tag.trim();
+            if (tagAlreadyExists(zhihu_user_tag_Object, trimmedTag)) {
+                tagCountIncrease(zhihu_user_question_tagCollection, zhihu_user_tag_Object, trimmedTag);
+            } else {
+                addTag(zhihu_user_question_tagCollection, zhihu_user_tag_Object, trimmedTag);
+            }
+        }
+        doRank(zhihu_user_question_tagCollection, zhihu_user_tag_Object);
     }
 
     public static DBObject create(DBCollection collection, String name) {
