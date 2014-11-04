@@ -155,6 +155,7 @@ public class ZhiHuUserTag {
         BasicDBObject tagsInfo = (BasicDBObject) dbObject.get("tags_info");
         BasicDBObject t = (BasicDBObject) tagsInfo.get(tag);
         t.put("count", (int) t.get("count") + 1);
+        collection.save(dbObject);
 //        doRank(collection, dbObject);
     }
 
