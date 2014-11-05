@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.security.MessageDigest;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -75,7 +76,35 @@ public class ZhiHuUserTagVote {
                 addTag(zhihu_user_question_tag_vote_Collection, zhihu_user_tag_Object, trimmedTag, vote);
             }
         }
-//        doRank(zhihu_user_question_tag_vote_Collection, zhihu_user_tag_Object);
+        doRank(zhihu_user_question_tag_vote_Collection, zhihu_user_tag_Object);
+    }
+
+    public static void doRank(DBCollection collection, DBObject dbObject) throws Exception {
+        loggerInfo("Enter doRank and rank user " + dbObject.get("_id"));
+        BasicDBObject basicDBObject = (BasicDBObject) dbObject.get("tags_info");
+
+        // 1.创建比较对象
+        Tag[] tags = new Tag[basicDBObject.size()];
+        int i = 0;
+        for (String key : basicDBObject.keySet()) {
+            BasicDBObject tag = (BasicDBObject) basicDBObject.get(key);
+            Tag new_tag = new Tag(tag.get("vote"), tag.get("rank"), key);
+            tags[i++] = new_tag;
+        }
+
+        // 2.对象排序
+        Arrays.sort(tags);
+
+        // 3.存储排序结果
+        int j = 0;
+        for (Tag t : tags) {
+            BasicDBObject tag = (BasicDBObject) basicDBObject.get(t.getKey());
+            tag.put("rank", j);
+            j++;
+        }
+
+        // 4.存入数据库
+        collection.save(dbObject);
     }
 
     public static void processQuestionsAndVotes(DBObject zhihuQuestions, DBObject zhihuQuestionsVotes,
