@@ -23,7 +23,8 @@ public class ZhiHuUserTagNewMain {
         BasicDBObject fields = new BasicDBObject("name",1);
         zhihuuserCollection = db.getCollection("zhihuuser");
         zhihuuserList = zhihuuserCollection.find(new BasicDBObject(), fields).toArray();
-        int userProcessed = 27311;
+        int userProcessed = (int)zhihu_user_question_tagCollection.count();
+        System.out.println("userProcessed: " + userProcessed);
         int userPerThread = 1000;
         int threadCount = 100;
         for (int i = 0; i < threadCount; i++) {
