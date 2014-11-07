@@ -34,13 +34,14 @@ public class ZhiHuUserTagVote {
                 i++;
                 String name = (String) currentZhiHuUser.get("name");
 
-                DBObject zhihu_user_tag_Object = getUserTagVote(name);
-                if (zhihu_user_tag_Object == null) {
+                DBObject zhiHuAnswer = getAnswer(name);
+                // skipped the user whose answer has no votes fields
+                if (zhiHuAnswer == null || zhiHuAnswer.get("votes") == null) {
                     continue;
                 }
 
-                DBObject zhiHuAnswer = getAnswer(name);
-                if (zhiHuAnswer == null) {
+                DBObject zhihu_user_tag_Object = getUserTagVote(name);
+                if (zhihu_user_tag_Object == null) {
                     continue;
                 }
 
