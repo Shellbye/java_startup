@@ -25,7 +25,9 @@ public class ZhiHuUserTagVote {
         try {
             init();
             int i = 0;
-            for (DBObject currentZhiHuUser : zhihuuserList) {
+            int start = (int)zhihu_user_question_tag_vote_Collection.count();
+            for (int j = start; j < zhihuuserList.size(); j++) {
+                DBObject currentZhiHuUser = zhihuuserList.get(j);
 //                for test purpose
 //                if (i >= 10) {
 //                    loggerWarn("Quiting...");
@@ -33,6 +35,7 @@ public class ZhiHuUserTagVote {
 //                }
                 i++;
                 loggerInfo("Enter for-loop the " + i + "times");
+                loggerInfo("Enter for-loop process NO." + j);
                 String name = (String) currentZhiHuUser.get("name");
 
                 DBObject zhiHuAnswer = getAnswer(name);
