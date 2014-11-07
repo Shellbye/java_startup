@@ -35,7 +35,7 @@ public class ZhiHuUserTagRunner implements Runnable {
 
     public void run() {
         System.out.println("Running " +  threadName );
-        logger.warn("Enter the main");
+        loggerWarn("Enter the main and process from " + start + " to " + end);
         try {
             // 初始化并获取zhihuuserList
             init();
@@ -44,9 +44,9 @@ public class ZhiHuUserTagRunner implements Runnable {
                 DBObject currentZhiHuUser = zhihuuserList.get(j);
                 i++;
 //                for test purpose
-                if (i >= 100) {
-                    break;
-                }
+//                if (i >= 100) {
+//                    break;
+//                }
                 String name = (String) currentZhiHuUser.get("name");
 
                 DBObject zhihu_user_tag_Object = getUserTag(name);
@@ -207,7 +207,6 @@ public class ZhiHuUserTagRunner implements Runnable {
 
         // 4.存入数据库
         collection.save(dbObject);
-        logger.warn("Rank done Quiting...");
     }
 
     public static String md5(String in) throws Exception {
@@ -224,5 +223,20 @@ public class ZhiHuUserTagRunner implements Runnable {
         }
 
         return hexString.toString().toUpperCase();
+    }
+
+    public static void loggerInfo(String s) {
+        System.out.println(s);
+//        logger.info(s);
+    }
+
+    public static void loggerWarn(String s) {
+        System.out.println(s);
+//        logger.warn(s);
+    }
+
+    public static void loggerError(String s) {
+        System.out.println(s);
+//        logger.error(s);
     }
 }
