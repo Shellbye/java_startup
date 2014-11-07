@@ -85,7 +85,7 @@ public class ZhiHuUserTag {
         BasicDBObject query = new BasicDBObject();
         query.put("name", name);
         DBObject zhiHuAnswer = zhihu_answersCollection.findOne(query);
-        if (zhiHuAnswer == null) {
+        if (zhiHuAnswer == null || zhiHuAnswer.get("votes") == null) {
             return null;
         }
         update(zhihu_user_question_tagCollection, zhihu_user_tag_Object,
