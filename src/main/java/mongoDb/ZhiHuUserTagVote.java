@@ -32,6 +32,7 @@ public class ZhiHuUserTagVote {
 //                    break;
 //                }
                 i++;
+                loggerInfo("Enter for-loop the " + i + "times");
                 String name = (String) currentZhiHuUser.get("name");
 
                 DBObject zhiHuAnswer = getAnswer(name);
@@ -157,6 +158,7 @@ public class ZhiHuUserTagVote {
     }
 
     public static DBObject getAnswer(String name) {
+        loggerInfo("try to getAnswer...");
         DBCollection zhihu_answersCollection = db.getCollection("zhihu_answers");
         BasicDBObject query = new BasicDBObject();
         query.put("name", name);
@@ -168,6 +170,7 @@ public class ZhiHuUserTagVote {
     }
 
     public static DBObject getUserTagVote(String name) {
+        loggerInfo("try to getUserTagVote...");
         BasicDBObject queryOfUserTag = new BasicDBObject();
         queryOfUserTag.put("name", name);
         DBCursor zhihu_user_question_tagCursor = zhihu_user_question_tag_vote_Collection.find(queryOfUserTag);
@@ -187,6 +190,7 @@ public class ZhiHuUserTagVote {
         zhihu_user_question_tag_vote_Collection = db.getCollection("zhihu_user_question_tag_vote");
         BasicDBObject fields = new BasicDBObject("name", 1);
         zhihuuserList = zhihuuserCollection.find(new BasicDBObject(), fields).toArray();
+        loggerInfo("init() finished");
     }
 
     public static DBObject create(DBCollection collection, String name) {
