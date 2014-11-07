@@ -27,10 +27,10 @@ public class ZhiHuUserTagVote {
             int i = 0;
             for (DBObject currentZhiHuUser : zhihuuserList) {
 //                for test purpose
-                if (i >= 10) {
-                    loggerWarn("Quiting...");
-                    break;
-                }
+//                if (i >= 10) {
+//                    loggerWarn("Quiting...");
+//                    break;
+//                }
                 i++;
                 String name = (String) currentZhiHuUser.get("name");
 
@@ -112,7 +112,12 @@ public class ZhiHuUserTagVote {
         for (String key : zhihuQuestions.keySet()) {
             loggerInfo("Enter the question-for loop and process question NO." + key);
             String question = (String) zhihuQuestions.get(key);
-            int vote = getIntVoteFromString((String) zhihuQuestionsVotes.get(key));
+            String voteString = (String) zhihuQuestionsVotes.get(key);
+            // vote 数据不一定有
+            if (voteString == null) {
+                continue;
+            }
+            int vote = getIntVoteFromString(voteString);
             String idOfQuestion = md5(question);
 
             BasicDBObject queryOfQuestion = new BasicDBObject();
@@ -173,7 +178,7 @@ public class ZhiHuUserTagVote {
     }
 
     public static void init() throws Exception {
-        mongoClient = new MongoClient("192.168.2.221", 27017);
+        mongoClient = new MongoClient("192.168.2.222", 27017);
         db = mongoClient.getDB("user");
 
         zhihuuserCollection = db.getCollection("zhihuuser");
