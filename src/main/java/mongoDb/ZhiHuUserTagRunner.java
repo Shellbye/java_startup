@@ -30,11 +30,11 @@ public class ZhiHuUserTagRunner implements Runnable {
         zhihuuserList = zhihuusers;
         start = start_c;
         end = end_c;
-        System.out.println("Creating " +  threadName );
+        loggerInfo("Creating " +  threadName );
     }
 
     public void run() {
-        System.out.println("Running " +  threadName );
+        loggerInfo("Running " +  threadName);
         loggerWarn("Enter the main and process from " + start + " to " + end);
         try {
             // 初始化并获取zhihuuserList
@@ -67,7 +67,7 @@ public class ZhiHuUserTagRunner implements Runnable {
 
     public void start ()
     {
-        System.out.println("Starting " +  threadName );
+        loggerInfo("Starting " +  threadName );
         if (t == null)
         {
             t = new Thread (this, threadName);
@@ -226,7 +226,7 @@ public class ZhiHuUserTagRunner implements Runnable {
     }
 
     public static void loggerInfo(String s) {
-        System.out.println(s);
+//        System.out.println(s);
 //        logger.info(s);
     }
 
