@@ -5,6 +5,8 @@ import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.common.settings.ImmutableSettings;
+import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.index.query.QueryBuilders;
 
@@ -20,9 +22,9 @@ public class MongoToES {
     static MongoClient mongoClient;
     static DBCollection mongoCollection;
     public static void main(String[] args) throws Exception{
-        setup("192.168.2.222","127.0.0.1","user","linkedin_user");
-        BasicDBObject fields = new BasicDBObject("skills", 1).append("address", 1).append("education", 1);
-        List<DBObject> objectList = mongoCollection.find(new BasicDBObject(), fields).toArray();
+        setup("127.0.0.1","127.0.0.1","testmongo","zhihu_tag");
+//        BasicDBObject fields = new BasicDBObject("skills", 1).append("address", 1).append("education", 1);
+        List<DBObject> objectList = mongoCollection.find(new BasicDBObject()).toArray();
         for(int i = 0; i < 10; i++){
             DBObject object = objectList.get(i);
             Map<String, Object> objectHashMap = new HashMap<String, Object>();
@@ -32,13 +34,13 @@ public class MongoToES {
                 }
                 objectHashMap.put(key, object.get(key));
             }
-            IndexResponse indexResponse = client.prepareIndex("user", "linkedin_user", Integer.toString(i))
+            IndexResponse indexResponse = client.prepareIndex("user", "zhihu_tag", Integer.toString(i))
                 .setSource(objectHashMap)
                 .execute()
                 .actionGet();
             loggerInfo(indexResponse.isCreated());
         }
-        search(new String[]{"bank"}, new String[]{"account"}, "account_number", "20");
+//        search(new String[]{"bank"}, new String[]{"account"}, "account_number", "20");
     }
 
     public static void search(String[] indexes, String[] types, String searchKey, String searchValue){
@@ -51,7 +53,9 @@ public class MongoToES {
     }
 
     public static void setup(String mongoServerIp, String ESServerIp, String mongoDbName, String mongoCollectionName) throws Exception{
-        client = new TransportClient()
+        Settings settings = ImmutableSettings.settingsBuilder()
+                .put("cluster.name", "shellbyelasticsearch").build();
+        client = new TransportClient(settings)
                 .addTransportAddress(new InetSocketTransportAddress(ESServerIp, 9300));
         mongoClient = new MongoClient(mongoServerIp, 27017);
         DB db = mongoClient.getDB(mongoDbName);
