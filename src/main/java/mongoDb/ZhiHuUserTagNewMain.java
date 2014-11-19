@@ -23,9 +23,9 @@ public class ZhiHuUserTagNewMain {
         BasicDBObject fields = new BasicDBObject("name",1);
         zhihuuserCollection = db.getCollection("zhihuuser");
         zhihuuserList = zhihuuserCollection.find(new BasicDBObject(), fields).toArray();
-        int userProcessed = (int)zhihu_user_question_tagCollection.count();
+        int userProcessed = 0; //(int)zhihu_user_question_tagCollection.count();
         ZhiHuUserTagRunner.loggerWarn("userProcessed: " + userProcessed);
-        int userPerThread = 1000;
+        int userPerThread = 5000;
         int threadCount = 100;
         for (int i = 0; i < threadCount; i++) {
             ZhiHuUserTagRunner R1 = new ZhiHuUserTagRunner(Integer.toString(i), zhihuuserList,
