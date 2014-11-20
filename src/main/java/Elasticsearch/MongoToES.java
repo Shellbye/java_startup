@@ -10,9 +10,12 @@ import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.index.query.QueryBuilders;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by shellbye on 11/18/14.
@@ -22,20 +25,41 @@ public class MongoToES {
     static MongoClient mongoClient;
     static DBCollection mongoCollection;
     public static void main(String[] args) throws Exception{
-        setup("192.168.2.222","user","zhihu_user_question_tag", "127.0.0.1");
+        String dbName = "user";
+        String collectionName = "linkedin_user";
+        setup("192.168.2.222",dbName,collectionName, "127.0.0.1");
 //        BasicDBObject fields = new BasicDBObject("skills", 1).append("address", 1).append("education", 1);
-        List<DBObject> objectList = mongoCollection.find(new BasicDBObject()).toArray();
+        List<DBObject> objectList = mongoCollection.find(new BasicDBObject()).limit(10).toArray();
         for(int i = 0; i < 10; i++){
             DBObject object = objectList.get(i);
             Map<String, Object> objectHashMap = new HashMap<String, Object>();
-            processJsonObjectZhiHuUserQuestionTag(objectHashMap, object);
-            IndexResponse indexResponse = client.prepareIndex("user", "zhihu_user_question_tag", Integer.toString(i))
+            processJsonObjectLinkedInUser(objectHashMap, object);
+            IndexResponse indexResponse = client.prepareIndex(dbName, collectionName, Integer.toString(i))
                 .setSource(objectHashMap)
                 .execute()
                 .actionGet();
             loggerInfo(indexResponse.isCreated());
         }
-//        search(new String[]{"bank"}, new String[]{"account"}, "account_number", "20");
+//        search(new String[]{"user"}, new String[]{"linkedin_user"}, "", "");
+    }
+
+    public static Map<String, Object> processJsonObjectLinkedInUser(Map<String, Object> objectHashMap, DBObject object){
+        for (String key : object.keySet()) {
+            if ("skills".equals(key)){
+                ArrayList<String> skills = (ArrayList<String>)object.get(key);
+                for (String skill : skills){
+                    //eg:"skill: 技能指数1技能：Software Engineering"
+                    Pattern pattern = Pattern.compile("skill: 技能指数(.*)技能：(.*)");
+                    Matcher matcher = pattern.matcher(skill);
+                    loggerInfo(skill);
+                    while (matcher.find()) {
+                        int currentSkillIndex = Integer.parseInt(matcher.group(1));
+                        String currentSkill = matcher.group(2);
+                    }
+                }
+            }
+        }
+        return objectHashMap;
     }
 
     public static Map<String, Object> processJsonObjectZhiHuUserQuestionTag(Map<String, Object> objectHashMap, DBObject object){
